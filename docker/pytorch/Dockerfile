@@ -1,6 +1,7 @@
 FROM nvidia/cudagl:10.0-devel-ubuntu16.04
 ARG PYTHON_VERSION=3.7
 ARG WITH_TORCHVISION=1
+RUN rm /etc/apt/sources.list.d/cuda.list && rm /etc/apt/sources.list.d/nvidia-ml.list
 RUN apt-get update && apt-get install -y --no-install-recommends \
          build-essential \
          cmake \
